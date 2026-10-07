@@ -11,17 +11,36 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: safe center;
 }
 
-.earth {
+.globe {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.earth,
+.explosion {
+  display: block;
   width: 128px;
   height: 128px;
   image-rendering: pixelated;
 }
 
+.explosion {
+  position: absolute;
+  inset: 0;
+}
+
+.explosion[hidden] {
+  display: none;
+}
+
 .no {
-  font-size: 40vw;
+  font-size: min(25vw, 40vh);
   line-height: 1;
 }
 
@@ -30,6 +49,11 @@ footer,
   font-size: 10px;
   text-align: center;
   padding: 8px;
+}
+
+.lang {
+  position: relative;
+  z-index: 1;
 }
 
 .lang a[aria-current="page"] {

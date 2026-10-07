@@ -19,7 +19,10 @@
     </nav>
     <main>
       <div class="no">NON</div>
-      <img class="earth" src="/earth.gif" alt="" width="64" height="64" />
+      <button class="globe" type="button" aria-label="Explode">
+        <img class="earth" src="/earth.gif" alt="" width="64" height="64" />
+        <img class="explosion" src="/Explosion1.gif" alt="" width="64" height="64" hidden />
+      </button>
 
     </main>
     <footer>
@@ -27,5 +30,14 @@
       &middot;
       <a href="https://fr.wikipedia.org/wiki/Horloge_de_l%27apocalypse">85 secondes avant minuit</a> (mis à jour le 27 janvier 2026)
     </footer>
+    <script>
+      var clicks = 0;
+      document.querySelector(".globe").addEventListener("click", function () {
+        if (++clicks < 5) return;
+        var boom = this.querySelector(".explosion");
+        boom.src = "/Explosion1.gif?" + Date.now();
+        boom.hidden = false;
+      });
+    </script>
   </body>
 </html>

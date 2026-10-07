@@ -19,12 +19,24 @@
     </nav>
     <main>
       <div class="no">NIE</div>
-      <img class="earth" src="/earth.gif" alt="" width="64" height="64" />
+      <button class="globe" type="button" aria-label="Explode">
+        <img class="earth" src="/earth.gif" alt="" width="64" height="64" />
+        <img class="explosion" src="/Explosion1.gif" alt="" width="64" height="64" hidden />
+      </button>
     </main>
     <footer>
       <a href="https://pl.wikipedia.org/wiki/DEFCON">DEFCON 3</a> (szacunek z 27 września 2026)
       &middot;
       <a href="https://pl.wikipedia.org/wiki/Zegar_zag%C5%82ady">85 sekund do północy</a> (aktualizacja: 27 stycznia 2026)
     </footer>
+    <script>
+      var clicks = 0;
+      document.querySelector(".globe").addEventListener("click", function () {
+        if (++clicks < 5) return;
+        var boom = this.querySelector(".explosion");
+        boom.src = "/Explosion1.gif?" + Date.now();
+        boom.hidden = false;
+      });
+    </script>
   </body>
 </html>
