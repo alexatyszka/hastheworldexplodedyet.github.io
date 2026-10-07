@@ -9,8 +9,15 @@ body {
 main {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.earth {
+  width: 128px;
+  height: 128px;
+  image-rendering: pixelated;
 }
 
 .no {
@@ -18,8 +25,15 @@ main {
   line-height: 1;
 }
 
-footer {
+footer,
+.lang {
   font-size: 10px;
   text-align: center;
   padding: 8px;
+}
+
+.lang a[aria-current="page"] {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
 }
