@@ -10,6 +10,7 @@
     <title>HAS THE WORLD EXPLODED YET?</title>
   </head>
   <body>
+    <div class="ptr" aria-hidden="true"><div class="spinner"></div></div>
     <nav class="lang">
       <a href="/" aria-current="page">EN</a>
       &middot;
@@ -33,15 +34,10 @@
       &middot; -->
       <a href="https://en.wikipedia.org/wiki/Doomsday_Clock">85 seconds to midnight</a> (updated Jan 27, 2026)
       <!-- <a href="https://en.wikipedia.org/wiki/Waffle_House_Index">Waffle House Index: green</a> (updated Sep 27, 2026) -->
+      <div>
+        <button class="refresh" type="button">↻ Refresh</button>
+      </div>
     </footer>
-    <script>
-      var clicks = 0;
-      document.querySelector(".globe").addEventListener("click", function () {
-        if (++clicks < 5) return;
-        var boom = this.querySelector(".explosion");
-        boom.src = "/Explosion1.gif?" + Date.now();
-        boom.hidden = false;
-      });
-    </script>
+    <script src="/script.js"></script>
   </body>
 </html>
